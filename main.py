@@ -42,11 +42,11 @@ def draw_colors(t: turtle, colors: list) -> None:
         t.end_fill()
         t.penup()
 
-    curr_x = 375
+    t.penup()
+    t.goto(-225, 75)
     for i in range(5):
-        t.goto(curr_x, 75)
         draw_square(colors[i])
-        curr_x += 150
+        t.forward(150)
 
 
 if __name__ == "__main__":
@@ -57,5 +57,6 @@ if __name__ == "__main__":
     # Draw the colors using Turtle
     t = turtle.Turtle()
     turtle.Screen().setup(width=750, height=150)
+    t.speed(0)
     draw_colors(t, color_list)
     turtle.done()
