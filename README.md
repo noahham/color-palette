@@ -1,6 +1,6 @@
 # color-palette
 
-A simple script that samples a five-color palette from a folder of images
+A simple script that samples a five-color palette from a folder of images.
 
 ## How It Works
 
