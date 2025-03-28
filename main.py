@@ -5,6 +5,16 @@ from sklearn.cluster import KMeans
 import turtle
 
 def get_palette(folder_path: str) -> list:
+    """
+    Gets a five-color palette from a folder of images
+
+    Args:
+        folder_path (str): The path to the folder containing images
+
+    Returns:
+        list: A list of five colors in hexadecimal format
+    """
+
     # Store all extracted colors
     all_colors = []
 
@@ -31,6 +41,14 @@ def get_palette(folder_path: str) -> list:
     return ['#{:02x}{:02x}{:02x}'.format(*color) for color in final_palette]
 
 def draw_colors(t: turtle, colors: list) -> None:
+    """
+    Draws a series of squares with the given colors using Turtle
+
+    Args:
+        t (turtle.Turtle): The Turtle object to use for drawing
+        colors (list): A list of five colors in hexadecimal format
+    """
+
     # Helper function to draw a square
     def draw_square(color: str) -> None:
         t.pendown()
@@ -50,9 +68,10 @@ def draw_colors(t: turtle, colors: list) -> None:
 
 
 if __name__ == "__main__":
-    path = "/Users/noahham/Documents/Stuff/Coding/color-palette/oregon"
+    path = input("Enter the path to the folder containing images: ")
     color_list = get_palette(path)
-    print(color_list)
+    for color in color_list:
+        print(color)
 
     # Draw the colors using Turtle
     t = turtle.Turtle()
